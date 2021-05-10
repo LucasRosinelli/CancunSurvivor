@@ -445,3 +445,5 @@ $RECYCLE.BIN/
 ## Custom
 ##
 tools/
+.sonarqube/
+testreports/

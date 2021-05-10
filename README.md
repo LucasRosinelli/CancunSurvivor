@@ -1,4 +1,14 @@
 [![License](https://img.shields.io/github/license/LucasRosinelli/CancunSurvivor)](./LICENSE)
+[![.NET Core](https://github.com/LucasRosinelli/CancunSurvivor/workflows/.NET%20Core/badge.svg)](./.github/workflows/main.yml)
+
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=LucasRosinelli_CancunSurvivor&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=LucasRosinelli_CancunSurvivor)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=LucasRosinelli_CancunSurvivor&metric=security_rating)](https://sonarcloud.io/dashboard?id=LucasRosinelli_CancunSurvivor)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=LucasRosinelli_CancunSurvivor&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=LucasRosinelli_CancunSurvivor)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=LucasRosinelli_CancunSurvivor&metric=code_smells)](https://sonarcloud.io/dashboard?id=LucasRosinelli_CancunSurvivor)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=LucasRosinelli_CancunSurvivor&metric=ncloc)](https://sonarcloud.io/dashboard?id=LucasRosinelli_CancunSurvivor)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=LucasRosinelli_CancunSurvivor&metric=coverage)](https://sonarcloud.io/dashboard?id=LucasRosinelli_CancunSurvivor)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=LucasRosinelli_CancunSurvivor&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=LucasRosinelli_CancunSurvivor)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=LucasRosinelli_CancunSurvivor&metric=bugs)](https://sonarcloud.io/dashboard?id=LucasRosinelli_CancunSurvivor)
 
 # Cancun Survivor
 People are now free to travel everywhere but because of the pandemic, a lot of hotels went bankrupt. Some former famous travel places are left with only one hotel.
