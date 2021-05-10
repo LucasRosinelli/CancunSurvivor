@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RuleSet Name="StyleCop rules for Core Application" Description="Custom Rules" ToolsVersion="10.0">
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.CSharp.ReadabilityRules">
+    <Rule Id="SA0001" Action="None" />
+    <Rule Id="SA1009" Action="None" />
+    <Rule Id="SA1101" Action="None" />
+    <Rule Id="SA1107" Action="Error" />
+    <Rule Id="SA1111" Action="None" />
+    <Rule Id="SA1122" Action="None" />
+    <Rule Id="SA1200" Action="None" />
+    <Rule Id="SA1300" Action="None" />
+    <Rule Id="SA1309" Action="None" />
+    <Rule Id="SA1500" Action="Error" />
+    <Rule Id="SA1503" Action="None" />
+    <Rule Id="SA1600" Action="None" />
+    <Rule Id="SA1602" Action="None" />
+    <Rule Id="SA1611" Action="None" />
+    <Rule Id="SA1615" Action="None" />
+    <Rule Id="SA1616" Action="None" />
+    <Rule Id="SA1618" Action="None" />
+    <Rule Id="SA1623" Action="None" />
+    <Rule Id="SA1633" Action="None" />
+    <Rule Id="SA1648" Action="None" />
+
+    <Rule Id="CA1032" Action="None" />
+    <Rule Id="CA1054" Action="None" />
+    <Rule Id="CA1062" Action="None" />
+    <Rule Id="CA1303" Action="None" />
+    <Rule Id="CA1305" Action="None" />
+    <Rule Id="CA1720" Action="None" />
+    <Rule Id="CA1812" Action="None" />
+    <Rule Id="CA1822" Action="None" />
+    <Rule Id="CA2007" Action="None" />
+    <Rule Id="CA2234" Action="None" />
+
+    <Rule Id="CS1998" Action="Error" />
+  </Rules>
+</RuleSet>
