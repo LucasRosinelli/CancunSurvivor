@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+#nullable disable warnings
 namespace CancunSurvivor.Booking.Api.ViewModels.Requests
 {
     /// <summary>
@@ -14,3 +15,4 @@ namespace CancunSurvivor.Booking.Api.ViewModels.Requests
         public string CustomerEmail { get; init; }
     }
 }
+#nullable enable warnings

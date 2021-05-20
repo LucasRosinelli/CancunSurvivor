@@ -57,15 +57,15 @@ namespace CancunSurvivor.Booking.Api.Services.Validators
             RuleFor(reservation => reservation.CustomerEmail)
                 .NotEmpty()
                 .WithMessage($"The {nameof(Reservation.CustomerEmail)} field is required")
-                .OnFailure(customClaim =>
+                .OnFailure(failure =>
                     logger.LogWarning("The {FieldName} field is required", nameof(Reservation.CustomerEmail)))
                 .MaximumLength(CustomerEmailMaxLength)
                 .WithMessage($"The max length allowed for the {nameof(Reservation.CustomerEmail)} is {CustomerEmailMaxLength}")
-                .OnFailure(customClaim =>
+                .OnFailure(failure =>
                     logger.LogWarning("The max length allowed for the {FieldName} is {FieldMaxLength}", nameof(Reservation.CustomerEmail), CustomerEmailMaxLength))
                 .EmailAddress()
                 .WithMessage($"The {nameof(Reservation.CustomerEmail)} must be a valid email")
-                .OnFailure(customClaim =>
+                .OnFailure(failure =>
                     logger.LogWarning("The {FieldName} must be a valid email", nameof(Reservation.CustomerEmail)));
 
             var todayStarts = DateTime.Now.Date;

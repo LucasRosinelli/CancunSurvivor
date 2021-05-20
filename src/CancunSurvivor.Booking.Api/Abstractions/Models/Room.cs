@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+#nullable disable warnings
 namespace CancunSurvivor.Booking.Api.Abstractions.Models
 {
     /// <summary>
@@ -18,3 +19,4 @@ namespace CancunSurvivor.Booking.Api.Abstractions.Models
         public IList<Reservation> Reservations { get; set; }
     }
 }
+#nullable enable warnings

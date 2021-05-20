@@ -1,5 +1,6 @@
 ﻿using System;
 
+#nullable disable warnings
 namespace CancunSurvivor.Booking.Api.Abstractions.Models
 {
     /// <summary>
@@ -33,3 +34,4 @@ namespace CancunSurvivor.Booking.Api.Abstractions.Models
         public Room Room { get; init; }
     }
 }
+#nullable enable warnings

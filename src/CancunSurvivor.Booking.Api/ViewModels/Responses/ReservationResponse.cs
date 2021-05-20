@@ -1,6 +1,7 @@
 ﻿using System;
 using CancunSurvivor.Booking.Api.Abstractions;
 
+#nullable disable warnings
 namespace CancunSurvivor.Booking.Api.ViewModels.Responses
 {
     /// <summary>
@@ -34,3 +35,4 @@ namespace CancunSurvivor.Booking.Api.ViewModels.Responses
         public Guid RoomId { get; init; }
     }
 }
+#nullable enable warnings

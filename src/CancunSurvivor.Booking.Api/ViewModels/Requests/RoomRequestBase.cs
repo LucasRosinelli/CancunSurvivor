@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using CancunSurvivor.Booking.Api.Abstractions;
 
+#nullable disable warnings
 namespace CancunSurvivor.Booking.Api.ViewModels.Requests
 {
     /// <summary>
@@ -15,3 +16,4 @@ namespace CancunSurvivor.Booking.Api.ViewModels.Requests
         public string Name { get; init; }
     }
 }
+#nullable enable warnings
