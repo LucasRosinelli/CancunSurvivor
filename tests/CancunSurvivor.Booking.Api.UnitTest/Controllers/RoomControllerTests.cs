@@ -25,12 +25,16 @@ namespace CancunSurvivor.Booking.Api.UnitTest.Controllers
         private readonly Mock<IRoomService> _mockService;
         private readonly Mock<IMapper> _mockMapper;
         private readonly Mock<ILogger<RoomController>> _mockLogger;
+        private readonly RoomController _controller;
 
         public RoomControllerTests()
         {
             _mockService = new Mock<IRoomService>();
             _mockMapper = new Mock<IMapper>();
             _mockLogger = new Mock<ILogger<RoomController>>();
+
+            var mapper = new MapperConfiguration(config => config.AddProfile<RoomProfile>());
+            _controller = new RoomController(_mockService.Object, mapper.CreateMapper(), _mockLogger.Object);
         }
 
         [Fact]
@@ -82,10 +86,9 @@ namespace CancunSurvivor.Booking.Api.UnitTest.Controllers
             _mockService
                 .Setup(x => x.ListAllAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(serviceResponse);
-            RoomController controller = CreateController();
 
             // Act
-            var result = await controller.Get();
+            var result = await _controller.Get();
 
             // Assert
             Assert.NotNull(result);
@@ -109,10 +112,9 @@ namespace CancunSurvivor.Booking.Api.UnitTest.Controllers
             _mockService
                 .Setup(x => x.ListAllAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(serviceValue);
-            RoomController controller = CreateController();
 
             // Act
-            var result = await controller.Get();
+            var result = await _controller.Get();
 
             // Assert
             Assert.NotNull(result);
@@ -139,10 +141,9 @@ namespace CancunSurvivor.Booking.Api.UnitTest.Controllers
             _mockService
                 .Setup(x => x.GetAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(serviceResponse);
-            RoomController controller = CreateController();
 
             // Act
-            var result = await controller.GetById(serviceValue.Id);
+            var result = await _controller.GetById(serviceValue.Id);
 
             // Assert
             Assert.NotNull(result);
@@ -164,10 +165,9 @@ namespace CancunSurvivor.Booking.Api.UnitTest.Controllers
             _mockService
                 .Setup(x => x.GetAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(serviceResponse);
-            RoomController controller = CreateController();
 
             // Act
-            var result = await controller.GetById(Guid.NewGuid());
+            var result = await _controller.GetById(Guid.NewGuid());
 
             // Assert
             Assert.NotNull(result);
@@ -196,10 +196,9 @@ namespace CancunSurvivor.Booking.Api.UnitTest.Controllers
             _mockService
                 .Setup(x => x.UpdateAsync(It.IsAny<Guid>(), It.IsAny<IEntityRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(serviceResponse);
-            RoomController controller = CreateController();
 
             // Act
-            var result = await controller.Update(serviceValue.Id, request);
+            var result = await _controller.Update(serviceValue.Id, request);
 
             // Assert
             Assert.NotNull(result);
@@ -222,10 +221,9 @@ namespace CancunSurvivor.Booking.Api.UnitTest.Controllers
             _mockService
                 .Setup(x => x.UpdateAsync(It.IsAny<Guid>(), It.IsAny<IEntityRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(serviceResponse);
-            RoomController controller = CreateController();
 
             // Act
-            var result = await controller.Update(Guid.NewGuid(), request);
+            var result = await _controller.Update(Guid.NewGuid(), request);
 
             // Assert
             Assert.NotNull(result);
@@ -252,10 +250,9 @@ namespace CancunSurvivor.Booking.Api.UnitTest.Controllers
             _mockService
                 .Setup(x => x.UpdateAsync(It.IsAny<Guid>(), It.IsAny<IEntityRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(serviceResponse);
-            RoomController controller = CreateController();
 
             // Act
-            var result = await controller.Update(Guid.NewGuid(), request);
+            var result = await _controller.Update(Guid.NewGuid(), request);
 
             // Assert
             Assert.NotNull(result);
@@ -263,13 +260,6 @@ namespace CancunSurvivor.Booking.Api.UnitTest.Controllers
             Assert.Equal(StatusCodes.Status400BadRequest, badRequestObjectResult.StatusCode);
             List<ValidationFailure> badRequestObjectResultValue = Assert.IsAssignableFrom<IEnumerable<ValidationFailure>>(badRequestObjectResult.Value).ToList();
             Assert.All(badRequestObjectResultValue, x => Assert.NotNull(serviceErrors.FirstOrDefault(s => s.PropertyName == x.PropertyName && s.ErrorMessage == x.ErrorMessage)));
-        }
-
-        private RoomController CreateController()
-        {
-            var mapper = new MapperConfiguration(config => config.AddProfile<RoomProfile>());
-
-            return new RoomController(_mockService.Object, mapper.CreateMapper(), _mockLogger.Object);
         }
     }
 }
